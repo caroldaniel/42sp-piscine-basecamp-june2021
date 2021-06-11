@@ -2,7 +2,7 @@
 
 #Grade: 100/100
 
-|#	|Name						              |LANGUAGE	|STATUS		
+|#	|EXERCISE NAME	              |LANGUAGE	|STATUS		
 |:-:|:--								          |:-:		  |--:			
 |00	|[Z](./ex00)			            |N/A		  |OK
 |01 |[testShell00](./ex01)        |N/A      |OK
