@@ -1,7 +1,6 @@
 # RUSH00
 
-## Final Grade: 0/100
-### Corrected since: yes
+## Final Grade: 0/100 (Corrected since)
 
 |#	|EXERCISE NAME	                            |LANGUAGE	|STATUS		
 |:-:|:--								                        |:-:		  |--:			
