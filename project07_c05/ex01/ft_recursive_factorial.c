@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 23:11:17 by cado-car          #+#    #+#             */
-/*   Updated: 2021/06/14 23:11:18 by cado-car         ###   ########.fr       */
+/*   Created: 2021/06/14 10:57:05 by cado-car          #+#    #+#             */
+/*   Updated: 2021/06/14 11:08:35 by cado-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+int	ft_recursive_factorial(int nb)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if ((str[i] >= 'a') && (str[i] <= 'z'))
-			str[i] -= 'a' - 'A';
-		i++;
-	}
-	return (str);
+	if (nb <= 0)
+		return (0);
+	if (nb == 1)
+		return (nb);
+	else
+		return (nb * ft_recursive_factorial(nb - 1));
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/14 23:12:39 by cado-car          #+#    #+#             */
+/*   Updated: 2021/06/14 23:12:40 by cado-car         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 int		ft_strlen(char *str);
 int		ft_check_base_error(char *str);
@@ -19,7 +31,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		len = ft_strlen(base);
 		if (nbr_unsigned < len)
 		{
-			write(1, &base[nbr], 1);
+			write(1, &base[nbr_unsigned % len], 1);
 		}
 		else
 		{
