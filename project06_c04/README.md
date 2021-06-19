@@ -8,5 +8,5 @@
 |01 |[ft_putstr](./ex01)                  |C        |OK
 |02 |[ft_putnbr](./ex02)                  |C        |OK
 |03 |[ft_atoi](./ex03)                    |C        |OK
-|04 |[ft_putnbr_base](./ex04)             |C        |0K
+|04 |[ft_putnbr_base](./ex04)             |C        |OK
 |05 |[ft_atoi_base](./ex05)               |C        |OK
