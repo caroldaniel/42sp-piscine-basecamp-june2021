@@ -1,6 +1,6 @@
 # C07
 
-## Grade: 60/100
+## Grade: 60/100 (Corrected since submition)
 
 |#	|EXERCISE NAME	                      |LANGUAGE	|STATUS		
 |:-:|:--								                  |:-:		  |--:			
