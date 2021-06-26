@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 21:10:39 by cado-car          #+#    #+#             */
-/*   Updated: 2021/06/17 02:08:53 by cado-car         ###   ########.fr       */
+/*   Updated: 2021/06/26 10:58:03 by cado-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	int				i;
 	int				signal;
 	int				rad;
-	unsigned int	result;
+	int				result;
 
 	if (!ft_is_base_valid(base_from) || !ft_is_base_valid(base_to))
 		return (NULL);
@@ -39,6 +39,8 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		i++;
 	}
 	result = ft_convert_from_base(&nbr[i], base_from);
+	if (result == 0)
+		signal = 1;
 	return (ft_convert_to_base(base_to, result, signal));
 }
 
@@ -54,7 +56,7 @@ int	ft_is_base_valid(char *base)
 		return (0);
 	while (base[i] != '\0')
 	{
-		if (base[i] == '+' || base[i] == '-' || ft_is_whitespace(base[i] == 1))
+		if (base[i] == '+' || base[i] == '-' || ft_is_whitespace(base[i]) == 1)
 			return (0);
 		c = 1;
 		while (base[i + c] != '\0')

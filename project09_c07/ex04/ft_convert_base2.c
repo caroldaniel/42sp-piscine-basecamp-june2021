@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 21:10:45 by cado-car          #+#    #+#             */
-/*   Updated: 2021/06/17 02:30:52 by cado-car         ###   ########.fr       */
+/*   Updated: 2021/06/26 10:56:38 by cado-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,14 @@ int	ft_is_base(char c, char *base);
 int	ft_convert_from_base(char *str, char *base)
 {
 	int	i;
-	int	c;
 	int	total;
 
 	i = 0;
 	total = 0;
-	while (ft_is_base(str[i], base) == 1)
+	while (ft_is_base(str[i], base) != -1)
 	{
-		c = 0;
-		while (base[c] != str[i])
-			c++;
 		total *= ft_strlen(base);
-		total += c;
+		total += ft_is_base(str[i], base);
 		i++;
 	}
 	return (total);
@@ -44,7 +40,7 @@ char	*ft_convert_to_base(char *base, unsigned int nbr, int signal)
 
 	rad = ft_strlen(base);
 	len = ft_nbrlen(nbr, rad, signal);
-	str = malloc((len + 1) * 1);
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);
 	i = 0;
@@ -60,7 +56,6 @@ char	*ft_convert_to_base(char *base, unsigned int nbr, int signal)
 		nbr /= rad;
 	}
 	return (str);
-	free(str);
 }
 
 int	ft_nbrlen(unsigned int nbr, int rad, int signal)
@@ -68,7 +63,7 @@ int	ft_nbrlen(unsigned int nbr, int rad, int signal)
 	unsigned int	len;
 
 	len = 0;
-	while (nbr > 0)
+	while (1)
 	{
 		len++;
 		if (nbr / rad == 0)
@@ -86,11 +81,11 @@ int	ft_is_base(char c, char *base)
 	int	i;
 
 	i = 0;
-	while (base[i] != '\0')
+	while (base[i])
 	{
 		if (base[i] == c)
-			return (1);
+			return (i);
 		i++;
 	}
-	return (0);
+	return (-1);
 }
