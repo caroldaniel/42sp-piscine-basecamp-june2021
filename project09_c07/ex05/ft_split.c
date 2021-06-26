@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 16:38:50 by cado-car          #+#    #+#             */
-/*   Updated: 2021/06/17 16:43:20 by cado-car         ###   ########.fr       */
+/*   Updated: 2021/06/26 11:19:27 by cado-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,10 @@ int	ft_is_sep(char *charset, char c)
 {
 	int	i;
 
-	if (c == '\0')
-		return (1);
 	i = 0;
 	while (charset[i] != '\0')
 	{
-		if (c == charset[i])
+		if (c == charset[i] || c == '\0')
 			return (1);
 		i++;
 	}
