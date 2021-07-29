@@ -1,4 +1,16 @@
-#include "do-op.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_do-op.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/29 18:19:46 by cado-car          #+#    #+#             */
+/*   Updated: 2021/07/29 18:25:11 by cado-car         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "do_op.h"
 
 int	main(int argc, char**argv)
 {
@@ -23,7 +35,7 @@ void	ft_do_op(int a, int b, char op)
 	{
 		if (b == 0)
 			ft_putstr("Stop : modulo by zero");
-		else 
+		else
 			ft_putnbr(operation(a, b, modulo));
 	}
 	else if (op == '/')

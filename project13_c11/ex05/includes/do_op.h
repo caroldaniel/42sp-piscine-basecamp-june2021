@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   do_op.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/29 18:19:27 by cado-car          #+#    #+#             */
-/*   Updated: 2021/07/29 18:22:01 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/07/29 18:19:33 by cado-car          #+#    #+#             */
+/*   Updated: 2021/07/29 18:25:06 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int (*f)(int, int))
-{
-	int	i;
-	int	inc;
-	int	dec;
+#ifndef DO_OP_H
+# define DO_OP_H
 
-	i = 0;
-	inc = 0;
-	dec = 0;
-	while (i < length - 1)
-	{
-		if (f(tab[i], tab[i + 1]) >= 0)
-			dec++;
-		if (f(tab[i], tab[i + 1]) <= 0)
-			inc++;
-		i++;
-	}
-	if (inc == i || dec == i)
-		return (1);
-	return (0);
-}
+void	ft_do_op(int a, int b, char op);
+int		operation(int a, int b, int (*f)(int, int));
+int		addition(int a, int b);
+int		subtraction(int a, int b);
+int		multiplication(int a, int b);
+int		modulo(int a, int b);
+int		division(int a, int b);
+int		ft_atoi(char *str);
+int		ft_strlen(char *str);
+void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
+
+#endif
